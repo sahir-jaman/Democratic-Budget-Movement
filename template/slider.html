@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=], initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="imgSlider"></div>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .imgSlider {
+            width: 90%;
+            height: 550px;
+            background-size: cover;
+            background-image: url("https://democraticbudget.org/upload/news/1767209522530854.png");
+            background-position: center;
+            /*animation: changeImage 20s linear infinite; */
+            box-shadow: rgba(148, 157, 165, 0.2) 0px 8px 24px;
+            border-radius: 5px;
+        }
+        
+        @keyframes changeImage {
+            0% {
+                background-image: url("https://democraticbudget.org/upload/news/1767209522530854.png");
+            }
+            
+            50% {
+                background-image: url(/media/posts/5.jpg);
+            }
+            
+            100% {
+                background-image: url(/media/posts/4.jpg);
+            }
+        }
+    </style>
+    
+
+</body>
+</html>

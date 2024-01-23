@@ -1,0 +1,350 @@
+{% include 'base.html' %}
+
+{% block content %}
+
+<!-- Slider start -->
+<section class="sm:h-[100vh] h-[100vh] ">
+  <div
+    class="w-full pt-[7%] mx-auto px-[5%] grid sm:grid-cols-[75%_auto] grid-cols-[100%] pl-[12%] grid-flow-row gap-x-[1px] gap-y-8">
+    <div class="w-full">
+      <a href="{% url 'Homepage' %}">
+        {%include 'slider.html'%}
+      </a>
+    </div>
+    <div class="flex items-center justify-center ">
+      <div class="min-w-screen sm:max-w-[400px] ">
+        <a href="{% url 'Homepage' %}"
+          class="sm:text-[23px] text-[22px] font-bold hover:text-orange-600 transition duration-300">জন বাজেট সংসদ
+          ২০২৩</a>
+        <p class="mt-[10px] sm:text-[11px] transition duration-300">হলো এমন একটি পদক্ষেপ যাতে জনগণ বা সাধারণ মানুষ তাদের
+          একটি বাজেট তৈরির পক্ষ থেকে অংশগ্রহণ করতে সক্ষম হয়। এটি একটি সার্বজনীন চেয়ারম্যান, বাজেট এক্সপার্টস, এবং
+          সমাজের বিভিন্ন শ্রেণীবিশেষ নেতারা থাকতে পারে।</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- Slider end -->
+
+
+<!-- DBM Initiatives Start -->
+<div id="dbm-initiative-container" class="pt-[30px] max-w-[1400px] mx-auto relative group">
+  <h1 id="dbm-initiative-text"
+    class="mx-auto text-[30px] sm:text-[35px] text-center transition-transform transform group-hover:scale-105">DBM
+    Initiatives</h1>
+  <div id="dbm-below-line"
+    class="absolute bottom-0 left-0 w-full h-1 bg-[red] transform scale-x-0 transition-transform duration-500 group-hover:scale-x-100">
+  </div>
+</div>
+<div id="logos"
+  class="mt-10 max-w-[1300px] bg-[] mx-auto grid grid-cols-2 sm:grid-cols-6 grid-flow-row gap-x-2 gap-y-4">
+  <div id="logo"
+    class="p-4 min-w-screen mx-auto border border-solid rounded-[5%] flex justify-center items-center flex-col gap-3 group transition-transform transform duration-500 hover:bg-gray-200">
+    <img src="/media/dbm-logo-1.png" alt="Logo"
+      class="transition-transform transform duration-500 group-hover:scale-75">
+    <h3 class="text-center transition-transform transform duration-500 group-hover:scale-110">Budget De-centralization
+    </h3>
+  </div>
+  <div id="logo"
+    class="p-4 min-w-screen mx-auto border border-solid rounded-[5%] flex justify-center items-center flex-col gap-3 group transition-transform transform duration-500 hover:bg-gray-200">
+    <img src="/media/dbm-logo-2.png" alt="Logo"
+      class="transition-transform transform duration-500 group-hover:scale-75">
+    <h3 class="text-center transition-transform transform duration-500 group-hover:scale-110">Tax Justice Campaign</h3>
+  </div>
+  <div id="logo"
+    class="p-4 min-w-screen mx-auto border border-solid rounded-[5%] flex justify-center items-center flex-col gap-3 group transition-transform transform duration-500 hover:bg-gray-200">
+    <img src="/media/dbm-logo-3.png" alt="Logo"
+      class="transition-transform transform duration-500 group-hover:scale-75">
+    <h3 class="text-center transition-transform transform duration-500 group-hover:scale-110">Budget Assembly</h3>
+  </div>
+  <div id="logo"
+    class="p-4 min-w-screen mx-auto border border-solid rounded-[5%] flex justify-center items-center flex-col gap-3 group transition-transform transform duration-500 hover:bg-gray-200">
+    <img src="/media/dbm-logo-4.png" alt="Logo"
+      class="transition-transform transform duration-500 group-hover:scale-75">
+    <h3 class="text-center transition-transform transform duration-500 group-hover:scale-110">Bueget Olympiad</h3>
+  </div>
+  <div id="logo"
+    class="p-4 min-w-screen mx-auto border border-solid rounded-[5%] flex justify-center items-center flex-col gap-3 group transition-transform transform duration-500 hover:bg-gray-200">
+    <img src="/media/dbm-logo-5.png" alt="Logo"
+      class="transition-transform transform duration-500 group-hover:scale-75">
+    <h3 class="text-center transition-transform transform duration-500 group-hover:scale-110">Bueget Bootcamp</h3>
+  </div>
+  <div id="logo"
+    class="p-4 min-w-screen mx-auto border border-solid rounded-[5%] flex justify-center items-center flex-col gap-3 group transition-transform transform duration-500 hover:bg-gray-200">
+    <img src="/media/dbm-logo-6.png" alt="Logo"
+      class="transition-transform transform duration-500 group-hover:scale-75">
+    <h3 class="text-center transition-transform transform duration-500 group-hover:scale-110">Media Fellowship</h3>
+  </div>
+</div>
+<!-- DBM Initiatives End -->
+
+
+<!-- Feature News start  -->
+<div id="dbm-initiative-container" class="pt-[80px] max-w-[1200px] mx-auto relative group">
+  <h1 id="dbm-initiative-text"
+    class="mx-auto text-[30px] sm:text-[35px] text-center transition-transform transform group-hover:scale-105">Feature News</h1>
+  <div id="dbm-below-line"
+    class="absolute bottom-0 left-0 w-full h-1 bg-[red] transform scale-x-0 transition-transform duration-500 group-hover:scale-x-100">
+  </div>
+</div>
+<div class="pt-[3%] max-w-[1200px] mx-auto ">
+  <div class="grid sm:grid-flow-col grid-flow-row sm:grid-cols-[60%_auto] grid-rows[60%_auto] gap-4">
+    <div class="">
+      <img src="{{featureNews.feature_image.url}}" alt="feature image"
+        class="rounded-[10px] object-cover w-full h-full" />
+    </div>
+    <div class=" mx-auto flex justify-center items-center">
+      <div class="grid grid-rows-2 p-1">
+        {% if featureNews.uid %}
+        <a href="{% url 'postDetail' uid=featureNews.uid %}" class="sm:text-[22px] text-[16px] hover:text-orange-600">{{featureNews.title}}</a>
+        {% else %}
+        <!-- Handle the case where 'uid' is not available, e.g., display an error or alternative content -->
+        <span class="text-red-500">Invalid link</span>
+        {% endif %}
+        <p class="text-[12px] sm:text-[16px]">{{ featureNews.teaser | truncatewords:20 }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Feature News end  -->
+
+
+<!-- Feature column start  -->
+<div class="pt-[80px] max-w-[1200px] mx-auto relative group">
+  <h1 class="mx-auto text-[30px] sm:text-[35px] text-center transition-transform transform group-hover:scale-105">মনোয়ার
+    মোস্তফা -এর কলাম</h1>
+  <div class="absolute bottom-0 left-0 w-full h-1 bg-[red] transform scale-x-0 transition-transform duration-500 group-hover:scale-x-100">
+  </div>
+</div>
+<div class="pt-[3%] max-w-[1200px] mx-auto ">
+  <div class="grid sm:grid-flow-col grid-flow-row sm:grid-cols-[60%_auto] grid-rows[60%_auto] gap-4">
+    <div class="">
+      <img src="{{featureColumn.feature_image.url}}" alt="feature image"
+        class="rounded-[10px] object-cover w-full h-full" />
+    </div>
+    <div class=" mx-auto flex justify-center items-center">
+      <div class="grid grid-rows-2 p-1">
+        {% if featureColumn.uid %}
+        <a href="{% url 'postDetail' uid=featureNews.uid %}" class="sm:text-[22px] text-[16px] hover:text-orange-600">{{featureColumn.title}}</a>
+        {% else %}
+        <!-- Handle the case where 'uid' is not available, e.g., display an error or alternative content -->
+        <span class="text-red-500">Invalid link</span>
+        {% endif %}
+        <p class="text-[12px] sm:text-[16px]">{{ featureColumn.teaser | truncatewords:20}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Feature column end  -->
+
+
+<!-- Issues to address start  -->
+<div class="pt-[5%] max-w-[1400px] mx-auto relative group">
+  <h1 class="mx-auto text-[30px] sm:text-[35px] text-center transition-transform transform group-hover:scale-105">Issues
+    To Address</h1>
+  <div
+    class="absolute bottom-0 left-0 w-full h-1 bg-[red] transform scale-x-0 transition-transform duration-500 group-hover:scale-x-100">
+  </div>
+</div>
+<div class="flex items-center justify-center">
+  <div class="max-w-[1400px] mx-auto">
+    <div class="w-full bg-transparent p-6 grid grid-cols-2 sm:grid-cols-3 grid-flow-row gap-x-10">
+      {% for p in posts_per_category %}
+      <div class="p-4 mb-4 max-w-[700px] transition-transform transform-gpu hover:scale-105">
+        <div class="grid grid-cols-1 grid-flow-row gap-2">
+          <div class="">
+            <img src="{{ p.feature_image.url }}" alt="Blog image"
+              class="sm:w-100 sm:h-60 rounded-[10px] object-cover w-full h-full" />
+          </div>
+          {% if p.uid %}
+          <a href="{% url 'postDetail' uid=p.uid %}" class="sm:text-[22px] text-[16px] hover:text-orange-600">{{p.title}}</a>
+          {% else %}
+          <!-- Handle the case where 'uid' is not available, e.g., display an error or alternative content -->
+          <span class="text-red-500">Invalid link</span>
+          {% endif %}
+
+          <p class="text-[12px] sm:text-[16px]">{{ p.teaser | truncatewords:20}}</p>
+        </div>
+        <a href="{% url 'postDetail' uid=p.uid %}">
+          <button class="hover:text-orange-600 sm:text-[16px] text-[12px]">Read More</button>
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+<!-- Issues to address end  -->
+
+
+<!-- DBM in Media start  -->
+<div class="pt-[5%] max-w-[1400px] mx-auto relative group ">
+  <h1 class="mx-auto text-[30px] sm:text-[35px] text-center transition-transform transform group-hover:scale-105">DBM in
+    Media</h1>
+  <div
+    class="absolute bottom-0 left-0 w-full h-1 bg-[red] transform scale-x-0 transition-transform duration-500 group-hover:scale-x-100">
+  </div>
+</div>
+<div class="flex items-center justify-center">
+  <div class="max-w-[1400px] mx-auto">
+    <div class="w-full bg-transparent p-6 grid grid-cols-2 sm:grid-cols-3 grid-flow-row gap-x-10">
+      {% for p in media %}
+      <div class="p-4 mb-4 max-w-[700px] transition-transform transform-gpu hover:scale-105">
+        <div class="grid grid-cols-1 grid-flow-row gap-2">
+          <div class="">
+            <img src="{{ p.feature_image.url }}" alt="Blog image"
+              class="sm:w-100 sm:h-60 rounded-[10px] object-cover w-full h-full" />
+          </div>
+          {% if p.uid %}
+          <a href="{% url 'postDetail' uid=p.uid %}" class="sm:text-[22px] text-[16px] hover:text-orange-600">{{ p.title}}</a>
+          {% else %}
+          <!-- Handle the case where 'uid' is not available, e.g., display an error or alternative content -->
+          <span class="text-red-500">Invalid link</span>
+          {% endif %}
+
+          <p class="text-[12px] sm:text-[16px]">{{ p.teaser | truncatewords:20}}</p>
+        </div>
+        <a href="{% url 'postDetail' uid=featureNews.uid %}">
+          <button class="hover:text-orange-600 sm:text-[16px] text-[12px]">Read More</button>
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+<!-- DBM in Media end  -->
+
+
+<!-- Volunteer section start  -->
+<div id="volunteer" class="pt-[80px] max-w-[1310px] mx-auto flex justify-center items-center pl-[30px] shadow-lg">
+  <div class="p-5 grid lg:grid-cols-[60%_auto] grid-rows-[60%_auto] gap-7">
+    <div id="left_section" class="py-center ">
+      <h1 class="lg:text-4xl text-3xl">Become a Budget Volunteer</h1>
+      <div id="form" class="pt-[30px]">
+        <div class="grid lg:grid-cols-[12%_auto] grid-cols-[22%_auto] ">
+          <label for="full-name" class="lg:text-lg text-sm text-black">Name</label>
+          <input type="text" id="full-name" name="full-name"
+            class="w-3/5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-2 transition-colors duration-200 ease-in-out">
+        </div>
+        <div class="grid lg:grid-cols-[12%_auto] grid-cols-[22%_auto] pt-[20px]">
+          <label for="full-name" class="lg:text-lg text-sm  text-black">Email</label>
+          <input type="text" id="full-name" name="full-name"
+            class="w-3/5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-2 transition-colors duration-200 ease-in-out">
+        </div>
+        <div class="grid lg:grid-cols-[12%_auto] grid-cols-[22%_auto] pt-[20px]">
+          <label for="full-name" class="lg:text-lg text-sm  text-black">Interest</label>
+          <input type="text" id="full-name" name="full-name"
+            class="w-3/5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-2 transition-colors duration-200 ease-in-out">
+        </div>
+        <div class="grid lg:grid-cols-[12%_auto] grid-cols-[22%_auto] pt-[20px] pb-[40px]">
+          <label for="full-name" class="lg:text-lg text-sm  text-black">Comment</label>
+          <input type="text" id="full-name" name="full-name"
+            class="w-3/5 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-2 transition-colors duration-200 ease-in-out">
+        </div>
+      </div>
+      <a href="{% url 'Homepage' %}">
+        <button class="text-white border-0 py-2 px-8 focus:outline-none bg-[#0c0c0c] hover:text-[red] rounded text-lg">Button</button>
+      </a>
+    </div>
+    <div id="right_section">
+      <div id="image" class="h-3/5 w-3/5 rounded-full overflow-hidden">
+        <img class="w-full h-full object-cover" src="/media/volunteer.jpg" alt="">
+      </div>
+      <div id="details" class="grid grid-rows-[50%_auto]">
+        <div class="">
+          <h1 class="pt-[10px] text-2xl">About Budget Volunteering</h1>
+          <p class="pt-[10px] text-sm">Join our budget volunteering program, where small contributions create
+            significant impacts.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Volunteer section end  -->
+
+
+<!-- Contact page start  -->
+<div id="contact" class="max-w-[1310px] mx-auto grid lg:grid-cols-[60%_auto] grid-rows-[30%_auto] pt-[150px]">
+
+  <div id="get-in-touch" class="lg:pl-[10%] bg-[]">
+    <h1 class="sm:text-3xl text-4xl font-bold title-font mb-4 text-gray-900 pb-[2px]">Get in touch</h1>
+    <div id="profile" class="max-w-[250px] flex justify-start items-center gap-3">
+      <div class="h-[70px] w-[70px] flex justify-center items-center">
+        <img class="object-cover ring-2 ring-[black] h-[65px] w-[65px] rounded-full"
+          src="https://democraticbudget.org/frontend/assets/images/avatar/pretty-blonde-woman-wearing-white-t-shirt.jpg"
+          alt="">
+      </div>
+      <div id="designation">
+        <h3>Sekender Ali Mina</h3>
+        <h3>Joint Secretary, DBM</h3>
+      </div>
+    </div>
+    <div id="information" class="pt-[10px]">
+      <div>
+        <img src="" alt="">
+        <h4>6/5A, Sir Sayed Road, Mohammadpur, Dhaka 1207, Bangladesh</h4>
+      </div>
+      <div>
+        <img src="" alt="">
+        <h4>+880 1711 780017</h4>
+      </div>
+      <div>
+        <img src="" alt="">
+        <h4>democratic.budget@gmail.com</h4>
+      </div>
+    </div>
+  </div>
+
+  <div id="contact-form relative" class="lg:pt-[0px] pt-[40px] ">
+    <h2 class="text-4xl font-bold">Contact</h2>
+    <h4 class="p-2 text-sm">Or, you can just send an email: democratic.budget@gmail.com</h4>
+    <div class="p-2 lg:w-3/3 w-2/3">
+      <div class="relative">
+        <label for="name" class="leading-7 text-sm text-gray-600">Name</label>
+        <input type="text" id="name" name="name"
+          class="w-full sm:w-3/4 bg-gray-100 bg-opacity-50 rounded border border-black focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+      </div>
+    </div>
+    <div class="p-2 lg:w-3/3 w-2/3">
+      <div class="relative">
+        <label for="email" class="leading-7 text-sm text-gray-600">Email</label>
+        <input type="email" id="email" name="email"
+          class="w-full sm:w-3/4 bg-gray-100 bg-opacity-50 rounded border border-black focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+      </div>
+    </div>
+    <div class="p-2 lg:w-3/3 w-2/3">
+      <div class="relative">
+        <label for="message" class="leading-7 text-sm text-gray-600">Message</label>
+        <textarea id="message" name="message"
+          class="w-full bg-gray-100 bg-opacity-50 rounded border border-black focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"></textarea>
+      </div>
+    </div>
+
+    <div class="pl-2">
+      <a href="{% url 'Homepage' %}">
+        <button class="text-lg p-2 text-white bg-[#0c0c0c] hover:text-[red] rounded-md">Submit</button>
+      </a>
+    </div>
+
+    <!-- extra  -->
+    <div class="p-20"></div>
+  </div>
+</div>
+<!-- Contact page end  -->
+
+
+{% endblock %}
+
+
+
+
+
+<!-- <div class="sm:pt-[180px] flex items-center justify-center pt-[220px] bg-[]">
+    <div>
+        <img src="https://democraticbudget.org/upload/news/1767209522530854.png" class="h-50 w-50 border-t rounded-t-2xl">
+    </div>
+    
+    <div class="max-w-[250px] sm:max-w-[400px]">
+        <h1 class="pl-5 pb-2 sm:p-5 sm:text-3xl text-[1xl] hover:text-orange-600">জনবাজেট সংসদ ২০২৩</h1>
+        <p class="sm:pl-5 sm:text-[11px] hidden sm:block">হলো এমন একটি পদক্ষেপ যাতে জনগণ বা সাধারণ মানুষ তাদের একটি বাজেট তৈরির পক্ষ থেকে অংশগ্রহণ করতে সক্ষম হয়। এটি একটি সার্বজনীন চেয়ারম্যান, বাজেট এক্সপার্টস, এবং সমাজের বিভিন্ন শ্রেণীবিশেষ নেতারা থাকতে পারে</p>
+    </div>
+</div> -->

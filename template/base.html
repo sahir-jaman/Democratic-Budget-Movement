@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="x-icon" href="/media/taka2.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+    <title>Demorcatic Budget Movement</title>
+</head>
+
+<body class="bg-gray-100">
+    <nav class="bg-gray-100 text-black fixed top-0 w-full z-10" x-data="{navbarOpen:false}">
+        <div class="container px-4 flex flex-wrap py-2 mx-auto ">
+            <a href="{% url 'Homepage' %}" class="inline-flex text-xl text-black font-black tracking-wider tracking-wider uppercase">
+              <img src="/media/andolon_logo2.png" alt="Website Logo" class="sm:w-[300px] sm:h-[60px] w-[260px] h-[60px]">
+            </a>
+            <!-- toggler button  -->
+            <button class="mt-[15px] inline-flex items-center justify-center text-black border border-[black] rounded-md w-8 h-8 mt-2 ml-auto mr-[18px] outline-none focus:outline-none lg:hidden "
+                @click="navbarOpen = !navbarOpen">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+            </button>
+            <!-- menu  -->
+            <div class="pt-[11px] lg:inline-flex lg:w-auto w-full mt-2 lg:mt-0 ml-auto" :class="{'hidden':!navbarOpen, 'flex':navbarOpen}">
+                <ul class="flex lg:flex-row lg:space-x-2 w-full flex-col space-y-2 lg:space-y-0">
+                    <li><a class="flex px-4 py-2 font-medium text-black hover:bg-[#0c0c0c] font-extrabold hover:text-white focus:text-[red] rounded-md" href="{% url 'Homepage' %}">Home</a></li>
+
+                    <!-- dropdown 1 -->
+                    <li class="relative" x-data="{dropdownOpen:false}"><button href="#" class="w-full flex px-4 py-2 font-medium text-black hover:bg-[#0c0c0c] hover:text-white focus:text-[red] rounded-md outline-none focus:outline-none" @click="dropdownOpen = !dropdownOpen">About</button>
+                        <!-- dropdown menu  -->
+                        <div class="lg:absolute bg-white right-0 rounded-md p-2" :class="{'hidden':!dropdownOpen, 'flex flex-col':dropdownOpen}" @click.away="dropdownOpen = false">
+                            <ul class="space-y-1 lg:w-48">
+                                <li><a href="{% url 'AboutPage' %}" class="flex items-center justify-center p-2 font-medium text-gray-600 hover:bg-gray-100 hover:text-black">About DBM</a></li>
+                                <li><a href="#" class="flex items-center justify-center p-2 font-medium text-gray-600 hover:bg-gray-100 hover:text-black">Executive Commitee</a></li>
+                                <li><a href="#" class="flex items-center justify-center p-2 font-medium text-gray-600 hover:bg-gray-100 hover:text-black">District Committee</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <!-- dropdown 2 -->
+                    <li class="relative" x-data="{dropdownOpen:false}"><button href="#" class="w-full flex px-4 py-2 font-medium text-black hover:bg-[#0c0c0c] hover:text-white focus:text-[red] rounded-md outline-none focus:outline-none" @click="dropdownOpen = !dropdownOpen">Events</button>
+                        <!-- dropdown menu  -->
+                        <div class="lg:absolute bg-white right-0 rounded-md p-2" :class="{'hidden':!dropdownOpen, 'flex flex-col':dropdownOpen}" @click.away="dropdownOpen = false">
+                            <ul class="space-y-1 lg:w-58">
+                                <li><a href="#" class="flex items-center justify-center lg:justify-start p-2 font-medium text-gray-600 hover:bg-gray-100 hover:text-black">Budget Decentralization</a></li>
+                                <li><a href="#" class="flex items-start justify-center lg:justify-start p-2 font-medium text-gray-600 hover:bg-gray-100 hover:text-black">Tax Justice</a></li>
+                                <li><a href="#" class="flex items-center justify-center lg:justify-start p-2 font-medium text-gray-600 hover:bg-gray-100 hover:text-black">Budget Olympiad</a></li>
+                                <li><a href="#" class="flex items-center justify-center lg:justify-start p-2 font-medium text-gray-600 hover:bg-gray-100 hover:text-black">People’s Budget Assembly</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <!-- dropdown 3 -->
+                    <li class="relative" x-data="{dropdownOpen:false}"><button href="#" class="w-full flex px-4 py-2 font-medium text-black hover:bg-[#0c0c0c] hover:text-white focus:text-[red] rounded-md outline-none focus:outline-none" @click="dropdownOpen = !dropdownOpen">Issues</button>
+                        <!-- dropdown menu  -->
+                        <div class="lg:absolute bg-white right-0 rounded-md p-2" :class="{'hidden':!dropdownOpen, 'flex flex-col':dropdownOpen}" @click.away="dropdownOpen = false">
+                            <ul class="space-y-1 lg:w-46">
+                                <li><a href="{% url 'category_posts' obj='agriculture' %}" class="flex items-center justify-center lg:justify-start p-2 font-medium text-gray-600 hover:bg-gray-100 hover:text-black">Agriculture</a></li>
+                                <li><a href="{% url 'category_posts' obj='labour and employment' %}" class="flex items-center justify-center lg:justify-start p-2 font-medium text-gray-600 hover:bg-gray-100 hover:text-black">Labour and Employment</a></li>
+                                <li><a href="{% url 'category_posts' obj='health' %}" class="flex items-center justify-center lg:justify-start p-2 font-medium text-gray-600 hover:bg-gray-100 hover:text-black">Health</a></li>
+                                <li><a href="{% url 'category_posts' obj='social protection' %}" class="flex items-center justify-center lg:justify-start p-2 font-medium text-gray-600 hover:bg-gray-100 hover:text-black">Social Protection</a></li>
+                                <li><a href="{% url 'category_posts' obj='gender and youth' %}" class="flex items-center justify-center lg:justify-start p-2 font-medium text-gray-600 hover:bg-gray-100 hover:text-black">Gender and Youth</a></li>
+                                <li><a href="{% url 'category_posts' obj='disability' %}" class="flex items-center justify-center lg:justify-start p-2 font-medium text-gray-600 hover:bg-gray-100 hover:text-black">Disability</a></li>
+                                <li><a href="{% url 'category_posts' obj='dalits' %}" class="flex items-center justify-center lg:justify-start p-2 font-medium text-gray-600 hover:bg-gray-100 hover:text-black">Dalits</a></li>
+                                <li><a href="{% url 'category_posts' obj='indigenous rights' %}" class="flex items-center justify-center lg:justify-start p-2 font-medium text-gray-600 hover:bg-gray-100 hover:text-black">Indigenous Rights</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <!-- dropdown 4 -->
+                    <li class="relative" x-data="{dropdownOpen:false}"><button href="#" class="w-full flex px-4 py-2 font-medium text-black hover:bg-[#0c0c0c] hover:text-white focus:text-[red] rounded-md outline-none focus:outline-none" @click="dropdownOpen = !dropdownOpen">Publication</button>
+                        <!-- dropdown menu  -->
+                        <div class="lg:absolute bg-white right-0 rounded-md p-2" :class="{'hidden':!dropdownOpen, 'flex flex-col':dropdownOpen}" @click.away="dropdownOpen = false">
+                            <ul class="space-y-1 lg:w-48">
+                                <li><a href="#" class="flex items-center justify-center lg:justify-start p-2 font-medium text-gray-600 hover:bg-gray-100 hover:text-black">People’s Budget Analysis</a></li>
+                                <li><a href="#" class="flex items-center justify-center  lg:justify-start p-2 font-medium text-gray-600 hover:bg-gray-100 hover:text-black">Briefing Papers</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <!-- dropdown 2 -->
+                    <li class="relative" x-data="{dropdownOpen:false}"><button href="#" class="w-full flex px-4 py-2 font-medium text-black hover:bg-[#0c0c0c] hover:text-white focus:text-[red] rounded-md outline-none focus:outline-none" @click="dropdownOpen = !dropdownOpen">Press</button>
+                        <!-- dropdown menu  -->
+                        <div class="lg:absolute bg-white right-0 rounded-md p-2" :class="{'hidden':!dropdownOpen, 'flex flex-col':dropdownOpen}" @click.away="dropdownOpen = false">
+                            <ul class="space-y-1 lg:w-48">
+                                <li><a href="#" class="flex items-center justify-center p-2 font-medium text-gray-600 hover:bg-gray-100 hover:text-black">Media Coverages</a></li>
+                                <li><a href="#" class="flex items-center justify-center p-2 font-medium text-gray-600 hover:bg-gray-100 hover:text-black">Press Documents</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                   
+                    <li><a class="flex px-4 py-2 font-medium text-black hover:bg-[#0c0c0c] hover:text-white focus:text-[red] rounded-md" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Include Alpine.js -->
+<script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.min.js" defer></script>
+</body>
+</body>
+
+</html>

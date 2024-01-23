@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="x-icon" href="/media/taka2.png">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>DBM issues</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 text-black">
+    {% include 'base.html' %}
+
+
+
+    <nav class=" pt-[100px] p-4">
+        <div class="container mx-auto">
+            <ul class="flex text-[red]">
+                <li><a href="{% url 'Homepage' %}" class="hover:text-[blue]">Home</a></li>
+                <li class="mx-2">></li>
+                <li><a href="#" class="hover:text-[blue]">Issues</a></li>
+                <li class="mx-2">></li>
+                {% for i in cat_posts %}
+                {% if forloop.counter <= 1 %}
+                <li><a href="#" class="hover:text-[blue]">{{i.category}}</a></li>
+                {%endif%}
+                {% endfor %}
+            </ul>
+        </div>
+    </nav>
+
+
+
+
+    <div class="pt-[10px] max-w-[1300px] mx-auto relative group text-center">
+        {% if cat_posts %}
+            {% for i in cat_posts %}
+                {% if forloop.counter <= 1 %}
+                    <h1 class="mx-auto text-[30px] sm:text-[35px] text-center transition-transform transform group-hover:scale-105 uppercase">
+                        {{ i.category }}
+                    </h1>
+                    <div class="absolute bottom-0 left-0 w-full h-1 bg-[red] transform scale-x-0 transition-transform duration-500 group-hover:scale-x-100">
+                    </div>
+                {% endif %}
+            {% endfor %}
+        {% else %}
+            <p class="md:text-3xl text-center text-xl text-[red] pt-[200px]">Sorry, no posts are available right now</p>
+        {% endif %}
+    </div>
+    
+    
+    <div class="flex items-center justify-center bg-[]">
+        <div class="max-w-[1400px] mx-auto">
+            <div class="w-full bg-transparent p-6 grid grid-cols-2 sm:grid-cols-3 grid-flow-row gap-x-10">
+                {% for p in cat_posts %}
+                <div class="p-4 mb-4 max-w-[700px] transition-transform transform-gpu hover:scale-105">
+                    <div class="grid grid-cols-1 grid-flow-row gap-2">
+                        <div class="">
+                            <img src="{{ p.feature_image.url }}" alt="Blog image"
+                                class="sm:w-100 sm:h-60 rounded-[10px] object-cover w-full h-full" />
+                        </div>
+                        <a href="{% url 'postDetail' uid=p.uid %}"
+                            class="sm:text-[22px] text-[16px] hover:text-blue-300">{{ p.title }}</a>
+                        <p class="text-[12px] sm:text-[16px]">{{ p.teaser | truncatewords:20 }}</p>
+                    </div>
+                    <a href="{% url 'postDetail' uid=p.uid %}">
+                        <button class="hover:text-orange-600 sm:text-[16px] text-[12px]">Read More</button>
+                      </a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Democratic Budget Movement</title>
+</head>
+<body class="bg-[#242526] p-2 text-white">
+    <!-- Heading section -->
+    <section>
+        <header class="body-font fixed top-0 w-full bg-[#242526] z-10">
+            <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+              <a class="flex title-font font-medium items-center mb-4 md:mb-0">
+                <a href="{% url 'Homepage'%}" class="flex items-center mb-4 md:mb-0">
+                  <img src="/media/andolon_logo.png" alt="Website Logo" class="sm:w-[300px] sm:h-[60px] p-2 bg-[transparent] w-50 h-[70px]">
+              </a>
+              </a>
+              <nav class="nav-links md:ml-auto flex flex-wrap items-center text-base justify-center">
+                <div class="toogle-button hidden">
+                  <h1>X</h1>
+                </div>
+                <div class="group">
+                  <a href="{% url 'Homepage'%}" class="mr-5 hover:text-blue-300 text-lg relative">Home
+                    <ul class="absolute hidden group-hover:block ">
+                  </ul>
+                  </a>
+                </div>
+                <div class="group">
+                  <a href="#" class="mr-5 hover:text-blue-300 hover:block text-lg relative">About
+                    <ul class="absolute hidden group-hover:block bg-[#213268]">
+                      <li class="w-max hover:text-white">About DBM</li>
+                      <li class="w-max hover:text-white">Executive Committee</li>
+                      <li class="w-max hover:text-white">District Committee</li>
+                    </ul>
+                  </a>
+                </div>
+                
+                <div class="group">
+                  <a href="#" class="mr-5 hover:text-blue-300 text-lg relative">Events
+                    <ul class="absolute hidden group-hover:block bg-[#213268]">
+                      <li class="w-max hover:text-white">Budget Decentralization</li>
+                      <li class="w-max hover:text-white">Tax Justice</li>
+                      <li class="w-max hover:text-white">Budget Olympiad</li>
+                      <li class="w-max hover:text-white">People’s Budget Assembly</li>
+                    </ul>
+                  </a>
+                </div>
+                
+                <div class="group">
+                  <a href="#" class="mr-5 hover:text-blue-300 text-lg relative">Issues
+                    <ul class="absolute hidden group-hover:block bg-[#213268]">
+                      <li class="w-max hover:text-white">Agriculture</li>
+                      <li class="w-max hover:text-white">Labour and Employment</li>
+                      <li class="w-max hover:text-white">Health</li>
+                      <li class="w-max hover:text-white">Social Protection</li>
+                      <li class="w-max hover:text-white">Gender and Youth</li>
+                      <li class="w-max hover:text-white">Disability</li>
+                      <li class="w-max hover:text-white">Dalits </li>
+                      <li class="w-max hover:text-white">Indigenous Rights</li>
+                    </ul>
+                  </a>
+                </div>
+                
+                <div class="group">
+                  <a href="#" class="mr-5 hover:text-blue-300 text-lg relative">Publication
+                    <ul class="absolute hidden group-hover:block bg-[#213268]">
+                      <li class="w-max hover:text-white">People’s Budget Analysis</li>
+                      <li class="w-max hover:text-white">Briefing Papers</li>
+                    </ul>
+                  </a>
+                </div>
+                
+                <div class="group">
+                  <a href="#" class="mr-5 hover:text-blue-300 text-lg relative">Press
+                    <ul class="absolute hidden group-hover:block bg-[#213268]">
+                      <li class="w-max hover:text-white">Media Coverages</li>
+                      <li class="w-max hover:text-white">Press Documents</li>
+                    </ul>
+                  </a>
+                </div>
+                
+                <div class="group">
+                  <a href="#contact" class="mr-5 hover:text-blue-300 text-lg relative">Contact</a>
+                </div>             
+              </nav>
+              <div class="flex items-center gap-6 sm:hidden">
+                <ion-icon onclick="onToggleMenu(this)" name="menu" class="text-3xl cursor-pointer"></ion-icon>
+            </div>
+            </div>
+        </header>
+    </section> 
+
+      <!-- JavaScript for smooth scrolling -->
+      <script>
+        const navLinks = document.querySelector('.nav-links')
+        function onToggleMenu(e){
+            console.log(e.name);
+            e.name = 'close';
+            //e.name = e.name === 'menu' ? 'close' : 'menu';
+            navLinks.classList.toggle('top-[9%]');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="shortcut icon" type="x-icon" href="/media/taka2.png">
+  <meta name="viewport" content="width=\, initial-scale=1.0">
+  <title>DBM post</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 text-black">
+  {% include 'base.html' %}
+
+
+
+  <nav class=" pt-[100px] p-4">
+    <div class="container mx-auto">
+      <ul class="flex text-[red]">
+        <li><a href="{% url 'Homepage' %}" class="hover:text-gray-300">Home</a></li>
+        <li class="mx-2">></li>
+        <li><a href="#" class="hover:text-gray-300">Issues</a></li>
+        <li class="mx-2">></li>
+        <li><a href="#" class="hover:text-gray-300">{{blog.category}}</a></li>
+      </ul>
+    </div>
+  </nav>
+
+
+
+<div class="bg-[] mx-auto">
+  <div id="news-background" class="">
+    <div class="float-left max-w-[50%] ">
+      <div class="p-5">
+        <h1 class="text-[20px] sm:text-[30px] text-[black]">{{blog.title}}</h1>
+        <div class="pt-[10px]">
+          <img src="/media/{{blog.feature_image}}" alt="picture" class="rounded-[10px] w-full h-full object-cover" />
+        </div>
+        <h1 class="pt-[10px] text-[15px] sm:text-[15px] text-[black]">{{blog.teaser}}</h1>
+      </div>
+    
+    </div>
+
+    <div class="p-5 pt-8">
+      <p class="text-justify">{{blog.description}}</p>
+    </div>
+
+  </div>
+</div>
+
+
+
+<div class="pt-[100px] max-w-[1300px] mx-auto relative group text-center">
+  <h1 class="mx-auto text-[30px] sm:text-[35px] text-center transition-transform transform group-hover:scale-105">Related posts</h1>
+  <div class="absolute bottom-0 left-0 w-full h-1 bg-[red] transform scale-x-0 transition-transform duration-500 group-hover:scale-x-100"></div>
+</div>
+<div class="flex items-center justify-center">
+  <div class="max-w-[1400px] mx-auto">
+      <div class="w-full bg-transparent p-6 grid grid-cols-2 sm:grid-cols-3 grid-flow-row gap-x-10">
+          {% for p in related_posts %}
+              <div class="p-4 mb-4 max-w-[700px] transition-transform transform-gpu hover:scale-105">
+                  <div class="grid grid-cols-1 grid-flow-row gap-2">
+                      <div class="">
+                          <img src="{{ p.feature_image.url }}" alt="Blog image" class="sm:w-100 sm:h-60 rounded-[10px] object-cover w-full h-full" />
+                      </div>
+                      <a href="{% url 'postDetail' uid=p.uid %}" class="sm:text-[22px] text-[16px] hover:text-blue-300">{{ p.title }}</a>
+                      <p class="text-[12px] sm:text-[16px]">{{ p.description | truncatewords:15 | safe }}</p>
+                  </div>
+                  <button class="hover:text-blue-300 sm:text-[16px] text-[12px]">Read More</button>
+              </div>
+          {% endfor %}
+      </div>
+  </div>
+</div>
+
+
+
+</body>
+
+</html>
